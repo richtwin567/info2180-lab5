@@ -9,12 +9,26 @@ if (array_key_exists("country", $_GET)) {
   $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%';");
 
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  
 }
 ?>
-
-<ul>
-<?php foreach ($results as $row): ?>
-  <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+echo <<< 'EOT'
+<table>
+<thead>
+<td>Country Name</td><td>Continent</td><td>Independence</td><td>Head of State</td>
+</thead>
+<tbody>
+EOT;
+?>
+    <?php foreach ($results as $row) : ?>
+      <tr>
+        <td><?= $row['name']; ?></td>
+        <td><?= $row['continent']; ?></td>
+        <td><?= $row['independence_year']; ?></td>
+        <td><?= $row['head_of_state']; ?></td>
+      </tr>
+    <?php endforeach; ?>
+<?php
+echo <<<'EOT'
+</tbody></table>
+EOT;

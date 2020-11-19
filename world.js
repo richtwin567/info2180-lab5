@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 		var results = document.getElementById("result");
 		fetch("http://localhost/info2180-lab5/world.php?country=" + query)
 			.then((res) => res.text())
-			.then((data) => 
-				results.innerHTML = data
-			);
+			.then((data) => (results.innerHTML = data));
 	});
 });

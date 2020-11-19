@@ -81,3 +81,34 @@ main {
 #result {
     margin-top: 3em;
 }
+
+
+
+#result table thead td{
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#result tr:nth-child(odd){
+    background-color: #f7fafc;
+}
+
+#result tr:nth-child(even){
+    background-color: white;
+}
+
+#result table{
+    box-shadow: 0px 0px 3px rgb(189, 189, 189);
+    border-radius: 5px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#result td{
+    padding:1em;
+}
+
+#result thead td{
+    background-color: white;
+}
