@@ -39,12 +39,12 @@ main {
 #controls {
 	display: grid;
     grid-template-areas: 
-        "label label label label label label" 
         ". search search search search ." 
         " . . lookup-country lookup-city . .";
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	row-gap:1em;
+	grid-template-rows: 1fr 1fr;
+    row-gap:1em;
+    margin: 3em 0;
 }
 
 #country {
@@ -63,6 +63,11 @@ main {
 	background-color: #38b2ac;
 }
 
+#lookup-city{
+    grid-area: lookup-city;
+    background-color:#4299E1;
+}
+
 #controls button {
 	border: none;
 	border-radius: 5px;
@@ -71,18 +76,9 @@ main {
 	width: 9em;
 	padding: 0.5em;
 	cursor: pointer;
-	outline: none;
+    outline: none;
+    font-weight: bold;
 }
-
-#controls label {
-	grid-area: label;
-}
-
-#result {
-    margin-top: 3em;
-}
-
-
 
 #result table thead td{
     font-weight: bold;
